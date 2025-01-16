@@ -1,38 +1,43 @@
 import React from "react";
-import Person from "./Person";
+import Day1 from "./Day1";
+import Day2 from "./Day2";
+import "./index.css"
 
 class App extends React.Component {
   constructor() {
     super();
     // Model: State of our app
     this.state = {
-      name: "Mr. Pounds",
+      day: null,
     };
 
-    this.changeName = this.changeName.bind(this);
+    this.changeDay = this.changeDay.bind(this);
   }
 
   // controller
-  changeName() {
-    if (this.state.name === "Mr. Pounds") {
-      // change the name in our state to Rowan
-      this.setState({
-        name: "Rowan",
-      });
-    } else if (this.state.name === "Rowan") {
-      this.setState({
-        name: "Christian",
-      });
-    } else {
-      this.setState({
-        name: "Mr. Pounds",
-      });
-    }
+  changeDay(e) {
+    const day = e.target.innerHTML.replace(" ", "");
+    this.setState({
+      day,
+    });
   }
 
   // View
   render() {
-    return <Person changeName={this.changeName} name={this.state.name} />;
+    return this.state.day === "Day1" ? (
+      <Day1 />
+    ) : this.state.day === "Day2" ? (
+      <Day2 />
+    ) : (
+      <>
+        <div
+          className="center-screen"
+        >
+          <button onClick={(e) => this.changeDay(e)}>Day 1</button>
+          <button onClick={(e) => this.changeDay(e)}>Day 2</button>
+        </div>
+      </>
+    );
   }
 }
 
