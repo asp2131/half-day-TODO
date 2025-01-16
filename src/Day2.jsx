@@ -6,8 +6,6 @@ class Day2 extends React.Component {
     // Model: State of this component
     this.state = {
     };
-
-    this.changeName = this.changeName.bind(this);
   }
 
   // controllers
@@ -15,7 +13,8 @@ class Day2 extends React.Component {
 
   // View
   render() {
-    return <></>;
+    return <>
+    </>;
   }
 }
 

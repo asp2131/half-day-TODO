@@ -75,3 +75,9 @@ button:focus-visible {
   place-self: center;
   width: 100vw;  
 }
+
+#home {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import Person from "./Person";
+import Person from "./components/Person";
 
 class Day1 extends React.Component {
   constructor() {
@@ -32,7 +32,10 @@ class Day1 extends React.Component {
 
   // View
   render() {
-    return <Person changeName={this.changeName} name={this.state.name} />;
+    return (
+    <div className="center-screen">
+    <Person  changeName={this.changeName} name={this.state.name} />
+    </div>);
   }
 }
 
